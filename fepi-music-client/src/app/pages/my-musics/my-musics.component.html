@@ -1,0 +1,27 @@
+<h1 class="title"> Minhas Musicas </h1>
+<span class="title-message mb-2"> Todas suas musicas preferidas estão aqui. </span>
+
+<table class="mt-4">
+  <thead>
+    <th> # </th>
+    <th> Titulo </th> 
+    <th> Artista </th>
+    <th> Duracao </th>
+    <th> Album </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let music of musics$ | async" (click)="playMusic(music)" 
+      [class.play]="music.id === currentMusic?.id">
+
+      <td *ngIf="music.id !== currentMusic?.id"> {{ music.id }} </td>
+      <td *ngIf="music.id === currentMusic?.id"> 
+        <span class="material-icons-outlined"> play_circle </span>
+      </td>
+      
+      <td> {{ music.title }} </td>
+      <td> {{ music.artist }} </td>
+      <td> {{ music.time }} </td>
+      <td> {{ music.album }} </td>
+    </tr>
+  </tbody>
+</table>

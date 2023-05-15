@@ -1,0 +1,37 @@
+@use 'colors' as colors;
+
+:host {
+  display: flex;
+  font-size: 1rem;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0px -1px 5px 1px colors.$highlight;
+  background-color: colors.$highlight;
+  
+  span{
+    text-align: end;
+    font-size: 1.5rem;
+    color: colors.$primary-bg;
+
+    &:first-child {
+      text-align: end;
+      width: 47.5%;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+      width: 5%;
+    }
+
+    &:last-child {
+      text-align: start;
+      width: 47.5%;
+    }
+
+
+  }
+
+}

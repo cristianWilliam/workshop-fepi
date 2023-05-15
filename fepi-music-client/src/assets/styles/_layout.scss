@@ -1,0 +1,71 @@
+$spacing-values: (
+  0: 0,
+  1: 0.5rem, // 8 pixels
+  2: 1rem, // 16 pixels
+  3: 2rem, // 32 pixels
+  4: 3rem, // 48 pixels
+  5: 6rem, // 96 pixels
+  6: 8rem, // 128 pixels
+  7: 10rem, // 160 pixels
+  8: 12rem, // 192 pixels
+  9: 16rem, // 256 pixels
+  10: 20rem// 320 pixels,
+);
+
+@for $i from 0 to 10 {
+  // Generating Margin classes
+  .m-#{$i} {
+    margin: map-get($spacing-values, $i);
+  }
+  .mt-#{$i} {
+    margin-top: map-get($spacing-values, $i);
+  }
+  .mb-#{$i} {
+    margin-bottom: map-get($spacing-values, $i);
+  }
+  .ml-#{$i} {
+    margin-left: map-get($spacing-values, $i);
+  }
+  .mr-#{$i} {
+    margin-right: map-get($spacing-values, $i);
+  }
+  .mx-#{$i} {
+    margin-left: map-get($spacing-values, $i);
+    margin-right: map-get($spacing-values, $i);
+  }
+  .my-#{$i} {
+    margin-top: map-get($spacing-values, $i);
+    margin-bottom: map-get($spacing-values, $i);
+  }
+
+  // Generating Padding classes
+  .p-#{$i} {
+    padding: map-get($spacing-values, $i);
+  }
+  .pt-#{$i} {
+    padding-top: map-get($spacing-values, $i);
+  }
+  .pb-#{$i} {
+    padding-bottom: map-get($spacing-values, $i);
+  }
+  .pl-#{$i} {
+    padding-left: map-get($spacing-values, $i);
+  }
+  .pr-#{$i} {
+    padding-right: map-get($spacing-values, $i);
+  }
+  .px-#{$i} {
+    padding-left: map-get($spacing-values, $i);
+    padding-right: map-get($spacing-values, $i);
+  }
+  .py-#{$i} {
+    padding-top: map-get($spacing-values, $i);
+    padding-bottom: map-get($spacing-values, $i);
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,12 @@
+@use 'colors' as colors;
+
+h1.title {
+  font-size: 2.5rem;
+}
+
+span.title-message {
+  display: block;
+  font-size: .9rem;
+  color: colors.$secondary-text;
+  font-weight: 700;
+}
