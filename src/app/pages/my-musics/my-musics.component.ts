@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Observable, Subscriber, Subscription, map } from "rxjs";
+import { Component, OnInit } from "@angular/core";
 import { Music } from "src/app/interfaces/music.model";
-import { MusicService } from "src/app/services/music.service";
+import { FakeMusics } from "src/app/services/fake.music";
 
 @Component({
   templateUrl: 'my-musics.component.html',
@@ -9,10 +8,10 @@ import { MusicService } from "src/app/services/music.service";
 })
 export class MyMusicsComponent implements OnInit{
 
-  currentMusicId$ = new Observable<number>();
-  musics$ = new Observable<Music[]>();
+  currentMusicId: number = 0;
+  musics: Music[] = [];
   
-  constructor(private musicService: MusicService){
+  constructor(){
   }
 
   ngOnInit(): void {
@@ -21,16 +20,15 @@ export class MyMusicsComponent implements OnInit{
   }
 
   getMusics(){
-    this.musics$ = this.musicService.getMusics();
+    this.musics = FakeMusics;
   }
 
   getCurrentMusic(){
-    this.currentMusicId$ = this.musicService.getCurrentMusic()
-      .pipe(map(x => x.id));
+    this.currentMusicId = 0;
   }
 
   playMusic(music: Music){
-    this.musicService.setCurrentMusic(music);
+    this.currentMusicId = music.id
   }
 
 }

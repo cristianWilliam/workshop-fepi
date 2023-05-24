@@ -10,11 +10,11 @@
     <th> Album </th>
   </thead>
   <tbody>
-    <tr *ngFor="let music of musics$ | async" (click)="playMusic(music)" 
-      [class.play]="music.id === (currentMusicId$ | async)">
+    <tr *ngFor="let music of musics" (click)="playMusic(music)" 
+      [class.play]="music.id === (currentMusicId)">
 
-      <td *ngIf="music.id !== (currentMusicId$ | async)"> {{ music.id }} </td>
-      <td *ngIf="music.id === (currentMusicId$ | async)"> 
+      <td *ngIf="music.id !== (currentMusicId)"> {{ music.id }} </td>
+      <td *ngIf="music.id === (currentMusicId)"> 
         <span class="material-icons-outlined"> play_circle </span>
       </td>
       

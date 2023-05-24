@@ -13,7 +13,7 @@ import { RouterModule } from "@angular/router";
     </div>
 
     <ng-container *ngFor="let menu of menus">
-        <div class="menu mb-2"
+      <div class="menu mb-2"
           [routerLink]="menu.route"
           routerLinkActive="active">
           <div class="content">

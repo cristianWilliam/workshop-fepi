@@ -7,7 +7,7 @@
     <th> Artista </th>
   </thead>
   <tbody>
-    <tr *ngFor="let artist of artists$ | async">
+    <tr *ngFor="let artist of artists">
       <td> {{ artist.id }} </td>
       <td> {{ artist.name }} </td>
     </tr>

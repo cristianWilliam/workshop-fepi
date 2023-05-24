@@ -4,7 +4,7 @@ export interface Music {
   id: number,
   title: string,
   artist?: Artist,
-  artistId: number,
+  artistId?: number,
   time: string,
   album: string
 }

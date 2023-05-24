@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
 import { Artist } from "src/app/interfaces/artist.model";
-import { MusicService } from "src/app/services/music.service";
+import { FakeArtists } from "src/app/services/fake.artist";
 
 @Component({
   templateUrl: 'list-artists.component.html',
@@ -9,11 +8,11 @@ import { MusicService } from "src/app/services/music.service";
 })
 export class ListArtistsComponent implements OnInit {
   
-  artists$ = new Observable<Artist[]>();
+  artists: Artist[] = [];
 
-  constructor(private musicService: MusicService){}
+  constructor(){}
 
   ngOnInit(): void {
-    this.artists$ = this.musicService.getArtists();
+    this.artists = FakeArtists;
   }
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Subscription } from "rxjs";
+import { Subscription, lastValueFrom } from "rxjs";
 import { Music } from "src/app/interfaces/music.model";
 import { MusicService } from "src/app/services/music.service";
 
@@ -15,29 +15,17 @@ import { MusicService } from "src/app/services/music.service";
       <span class="album"> {{ music?.album || '😿' }} </span>
   `
 })
-export class FooterComponent implements OnInit, OnDestroy{
+export class FooterComponent {
   
   protected music?: Music;
-  private subs = new Subscription();
-
-constructor(private musicService: MusicService){}
+  
+constructor(){}
   
   ngOnInit(): void {
     this.getCurrentMusic();  
   }
 
   getCurrentMusic(){
-    const sub = this.musicService.currentMusic$
-      .subscribe(x => this.music = x);
-
-    this.subs.add(sub);
   }
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
-  }
-
-
-
 
 }

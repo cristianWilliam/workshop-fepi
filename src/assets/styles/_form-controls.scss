@@ -1,0 +1,54 @@
+@use 'colors' as colors;
+
+.input {
+  flex-grow: 1;
+
+  &.error {
+    input, select {
+      border: 1px solid colors.$error;
+    }
+
+    p {
+      color: colors.$error;
+      font-size: .8rem;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: .9rem;
+    opacity: .7;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px 10px;
+    border: 0px;
+    outline: none;
+    background-color: colors.$secondary-bg;
+    border-radius: 6px;
+    margin-top: 5px;
+    box-shadow: 0px 0px 10px 4px colors.$shadow;
+
+    &:focus {
+      border: 1px solid colors.$highlight;
+    }
+  }
+}
+
+.button {
+  background-color: colors.$highlight;
+  color: colors.$primary-bg;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 0px;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 2px colors.$highlight;
+  }
+}
