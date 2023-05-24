@@ -1,0 +1,17 @@
+@use 'colors' as colors;
+@use 'table';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+ table {
+  tr.play td {
+    color: colors.$highlight;
+  }
+}
+
+.material-icons-outlined {
+  color: colors.$highlight;
+}

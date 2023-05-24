@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SidePanelComponent } from './components/side-panel/side-panel.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http'
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'add-musics',
     loadChildren: () => import('./pages/add-musics/add-musics.module')
+  },
+  {
+    path: 'list-artists',
+    loadChildren: () => import('./pages/list-artists/list-artists.module')
   }
 ]
 
@@ -31,6 +36,7 @@ const routes: Routes = [
     BrowserModule,
     SidePanelComponent,
     FooterComponent,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

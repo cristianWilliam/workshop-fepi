@@ -1,11 +1,6 @@
 @use 'colors' as colors;
 
-$table-line-height: 40px;
-
-:host {
-  display: block;
-  width: 100%;
-}
+$_table-line-height: 40px;
 
 table {
   width: 100%;
@@ -27,7 +22,7 @@ table {
   }
 
   tr td {
-    height: $table-line-height;
+    height: $_table-line-height;
     cursor: pointer;
   }
 
@@ -39,8 +34,4 @@ table {
     color: colors.$highlight;
   }
   
-}
-
-.material-icons-outlined {
-  color: colors.$highlight;
 }

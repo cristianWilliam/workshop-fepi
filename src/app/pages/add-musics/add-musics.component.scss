@@ -9,12 +9,11 @@
   flex-wrap: nowrap;
   gap: 15px;
 
-
   .input {
     flex-grow: 1;
 
     &.error {
-      input {
+      input, select {
         border: 1px solid colors.$error;
       }
 
@@ -30,7 +29,7 @@
       opacity: .7;
     }
   
-    input {
+    input, select {
       width: 100%;
       padding: 10px 10px;
       border: 0px;

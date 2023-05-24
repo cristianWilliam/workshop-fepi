@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MusicService } from './services/music.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FEPI MUSIC';
+
+  constructor(){
+  }
+
 }

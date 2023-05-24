@@ -7,13 +7,11 @@ import { MusicService } from "src/app/services/music.service";
   templateUrl: 'my-musics.component.html',
   styleUrls: ['my-musics.component.scss']
 })
-export class MyMusicsComponent implements OnInit, OnDestroy{
+export class MyMusicsComponent implements OnInit{
 
-  currentMusic?: Music
-  unsubOnDestroy = new Subscription();
-
+  currentMusicId$ = new Observable<number>();
   musics$ = new Observable<Music[]>();
-
+  
   constructor(private musicService: MusicService){
   }
 
@@ -22,21 +20,17 @@ export class MyMusicsComponent implements OnInit, OnDestroy{
     this.getCurrentMusic();
   }
 
-  ngOnDestroy(): void {
-    this.unsubOnDestroy.unsubscribe();
-  }
-
   getMusics(){
-    this.musics$ = this.musicService.getAll();
+    this.musics$ = this.musicService.getMusics();
   }
 
   getCurrentMusic(){
-    const sub = this.musicService.currentMusic$.subscribe(x => this.currentMusic = x);
-    this.unsubOnDestroy.add(sub);
+    this.currentMusicId$ = this.musicService.getCurrentMusic()
+      .pipe(map(x => x.id));
   }
 
   playMusic(music: Music){
-    this.musicService.currentMusic$.next(music);
+    this.musicService.setCurrentMusic(music);
   }
 
 }
