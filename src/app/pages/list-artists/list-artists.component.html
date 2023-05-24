@@ -1,0 +1,15 @@
+<h1 class="title"> Listar Artistas </h1>
+<span class="title-message mb-2"> Aqui irá encontrar todos artistas cadastrados. </span>
+
+<table>
+  <thead>
+    <th> # </th>
+    <th> Artista </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let artist of artists$ | async">
+      <td> {{ artist.id }} </td>
+      <td> {{ artist.name }} </td>
+    </tr>
+  </tbody>
+</table>

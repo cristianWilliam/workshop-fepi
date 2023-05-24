@@ -5,23 +5,25 @@
 
   <div class="flex mt-3">
     <div class="input"
-      [class.error]="nome.control.touched && nome.control.invalid">
+      [class.error]="isControlInvalid(nome)">
       <span>Nome</span>
       <input 
         type="text" placeholder="Mulher de Fases" 
         ngModel #nome="ngModel" name="nome" required>
-      <p *ngIf="nome.control.touched && nome.control.invalid"> 
+      <p *ngIf="isControlInvalid(nome)"> 
         Campo Invalido 
       </p>
     </div>
   
     <div class="input"
-      [class.error]="artista.control.touched && artista.control.invalid">
+      [class.error]="isControlInvalid(artista)">
       <span>Artista</span>
-      <input 
-        type="text" placeholder="Raimundos"
-        ngModel #artista="ngModel" name="artista" required>
-      <p *ngIf="artista.control.touched && artista.control.invalid"> 
+      <select ngModel #artista="ngModel" name="artista" required>
+        <option *ngFor="let artist of (artists$ | async)" [value]="artist.id">
+          {{ artist.name }}
+        </option>
+      </select>
+      <p *ngIf="isControlInvalid(artista)"> 
         Campo Invalido 
       </p>
     </div>
@@ -29,12 +31,12 @@
   
   <div class="flex mt-2">
     <div class="input"
-      [class.error]="duracao.control.touched && duracao.control.invalid">
+      [class.error]="isControlInvalid(duracao)">
       <span>Duração</span>
       <input 
         type="text" placeholder="5:42" 
         ngModel #duracao="ngModel" name="duracao" required>
-      <p *ngIf="duracao.control.touched && duracao.control.invalid"> 
+      <p *ngIf="isControlInvalid(duracao)"> 
         Campo Invalido 
       </p>
     </div>

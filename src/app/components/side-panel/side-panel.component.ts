@@ -36,6 +36,11 @@ export class SidePanelComponent{
       name: 'Add Musicas',
       icon: 'add',
       route: 'add-musics'
+    },
+    {
+      name: 'Listar Artistas',
+      icon: 'mic',
+      route: 'list-artists'
     }
   ]
 }
