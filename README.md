@@ -1,27 +1,45 @@
-# FepiMusic
+# Fepi Music Workshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Pré-requisitos
 
-## Development server
+Antes de executar o projeto, verifique se você tem o Node.js e o Angular CLI instalados. Siga as instruções abaixo para instalar essas dependências:
+## Verificando a instalação do Node.js
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para verificar se o Node.js está instalado em sua máquina, você pode executar o seguinte comando no terminal:
 
-## Code scaffolding
+```shell
+node --version
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Caso não tenha, para instalar, use o link [nodejs.org](https://nodejs.org/).
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Verificando a instalação do Angular CLI
 
-## Running unit tests
+Para verificar se o Angular CLI esta instalado, 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```shell
+ng version
+```
 
-## Running end-to-end tests
+Caso não esteja instalado, execute:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```shell
+npm i @angular/cli --global
+```
 
-## Further help
+## Para Executar o projeto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Navegue até a pasta do projeto, faça o download de todas as dependecias
+
+```shell
+npm i
+```
+
+Execute o projeto
+
+```shell
+npm start
+```
+
+
